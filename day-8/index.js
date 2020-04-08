@@ -9,7 +9,22 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+class Node {
+    constructor(data, next=null){
+        this.data = data;
+        this.next = next
+    }
+}
+class ListNode {
+    constructor(){
+        this.head = null
+    }
 
+    insertNode(data){
+        this.head = new Node(data, this.head)
+        return this.head
+    }
+}
 
  /**
  * SOLUTION
@@ -19,6 +34,7 @@
  * we write a conditional to check if the next node in the double variable is falsy. If it is this means our link list has an odd number of elements in the link list
  * the next check will be for the next next element in the double variable. If it is falsy this means our link list is an even link list and we want to return the next node in the single 
  */
+
 var middleNode = function(head) {
 
     let double = head;
@@ -35,4 +51,5 @@ var middleNode = function(head) {
     }
     
 };
+
 
