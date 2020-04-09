@@ -50,20 +50,13 @@ Can you solve it in O(N) time and O(1) space?
  * @return {boolean}
  */
 var backspaceCompare = function (S, T) {
-  let sFiltered = generateFilteredString(S);
-  let tFiltered = generateFilteredString(T);
-
-  return sFiltered === tFiltered ? true : false;
+  return generateFilteredString(S) === generateFilteredString ? true : false;
 };
 
 function generateFilteredString(str) {
   let hash = [];
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === "#") {
-      hash.pop();
-    } else {
-      hash.push(str[i]);
-    }
+    str[i] === "#" ? hash.pop() : hash.push(str[i]);
   }
   return hash.join("");
 }
