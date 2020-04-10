@@ -29,6 +29,11 @@ minStack.getMin();   --> Returns -2.
 
 /**
  * Solution
+ * Step 1: Created a stack in the MinStack Function and bind it to the MinStack prototype
+ * Step 2: For the Push prototype, I just called the stack and added the push method to it and passed in the value pass as the argument of the push MinStack prototype
+ * Step 3: For the pop function which requires you to remove an element from the stack i used the Array.prototype.pop method which removes the last element
+ * Step 4: And for the top prototype method, I used the 'Length - 1 method to get the last element in the array'
+ * Step 5: Finally for the getMin prototype, i used the Math.min method and destructured  the stack in in to get single elements since the Math.min accepts single element(s) not arrays
  */
 var MinStack = function() {
     this.stack = []
