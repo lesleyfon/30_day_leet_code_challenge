@@ -27,3 +27,13 @@ Note:
 1 <= stones.length <= 30
 1 <= stones[i] <= 1000
  */
+
+
+ /**
+  * Solution
+  * Step 1: Create a heap to and add and sort the stones as the first heap entry
+  * Step 2: while heap length is greater than 0 we want to to keep performing the following task
+  * Step 3: We remove the first two elements if X is greater than Y, we get the difference of the two and add it to the head.
+  * Step 4: We remove the first two elements of the array and next we sort the heap
+  * Step 5: If the first two elements are equal, we want to remove the first two elements from the array and after sort the array just to make sure we are dealing with a sorted array
+  */
