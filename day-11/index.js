@@ -28,12 +28,30 @@ Note:
 1 <= stones[i] <= 1000
  */
 
+/**
+ * Solution
+ * Step 1: Create a heap to and add and sort the stones as the first heap entry
+ * Step 2: while heap length is greater than 0 we want to to keep performing the following task
+ * Step 3: We remove the first two elements if X is greater than Y, we get the difference of the two and add it to the head.
+ * Step 4: We remove the first two elements of the array and next we sort the heap
+ * Step 5: If the first two elements are equal, we want to remove the first two elements from the array and after sort the array just to make sure we are dealing with a sorted array
+ */
 
- /**
-  * Solution
-  * Step 1: Create a heap to and add and sort the stones as the first heap entry
-  * Step 2: while heap length is greater than 0 we want to to keep performing the following task
-  * Step 3: We remove the first two elements if X is greater than Y, we get the difference of the two and add it to the head.
-  * Step 4: We remove the first two elements of the array and next we sort the heap
-  * Step 5: If the first two elements are equal, we want to remove the first two elements from the array and after sort the array just to make sure we are dealing with a sorted array
-  */
+/**
+ * @param {number[]} stones
+ * @return {number}
+ */
+var lastStoneWeight = function (stones) {
+  let heap = [...stones.sort((a, b) => b - a)];
+  while (heap.length > 1) {
+    if (heap[0] > heap[1]) {
+      heap.push(heap[0] - heap[1]);
+      heap.splice(0, 2);
+      heap = heap.sort((a, b) => b - a);
+    } else if (heap[0] === heap[1]) {
+      heap = heap.sort((a, b) => b - a);
+      heap.splice(0, 2);
+    }
+  }
+  return heap[0] ? heap[0] : 0;
+};
